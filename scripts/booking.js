@@ -48,12 +48,12 @@ clearBtn.addEventListener("click", function clear() {
 // when the half-day button is clicked, set the daily rate to $20, add the "clicked" class to the "half" element, remove it from the "full" element, and recalculate the total cost.
 
 let halfDayBtn = document.getElementById("half");
-let fullDayBtn = document.getElementById("full")
+let fullDayBtn = document.getElementById("full");
 
 halfDayBtn.addEventListener("click", function selectHalf() {
     costPerDay = 20;
-    halfDayBtn.classList.add("clicked")
-    fullDayBtn.classList.remove("clicked")
+    halfDayBtn.classList.add("clicked");
+    fullDayBtn.classList.remove("clicked");
 })
 
 
@@ -62,8 +62,8 @@ halfDayBtn.addEventListener("click", function selectHalf() {
 
 fullDayBtn.addEventListener("click", function selectHalf() {
     costPerDay = 35;
-    fullDayBtn.classList.add("clicked")
-    halfDayBtn.classList.remove("clicked")
+    fullDayBtn.classList.add("clicked");
+    halfDayBtn.classList.remove("clicked");
 })
 
 
@@ -71,6 +71,6 @@ fullDayBtn.addEventListener("click", function selectHalf() {
 /********* calculate *********/
 // when a calculation is needed, set the innerHTML of the calculated-cost element to the appropriate value
 
-// function calculate() {
-//     let calculatedCost
-// }
+function calculate() {
+    let calculatedCost = document.getElementById("calculated-cost");
+}
