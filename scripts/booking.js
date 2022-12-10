@@ -3,16 +3,16 @@
 // Do any of these variables need to be initialized when the page is loaded? 
 // When do they need to be reset or updated?
 
-var costPerDay;
-var daysSelected = 0;
-var elementsClicked = 0;
+let costPerDay = 0;
+let daysSelected = 0;
+let elementsClicked = 0;
 
 
 /********* colour change days of week *********/
 // when the day buttons are clicked, we will apply the "clicked" class to that element, and update any other relevant variables. Then, we can recalculate the total cost.
 // added challenge: don't update the dayCounter if the same day is clicked more than once. hint: .classList.contains() might be helpful here!
 
-var dayBtns = document.querySelectorAll("li");
+let dayBtns = document.querySelectorAll("li");
 
 for (const btn of dayBtns) {
     btn.addEventListener("click", function addClicked() {
@@ -20,7 +20,7 @@ for (const btn of dayBtns) {
             elementsClicked = elementsClicked - 1;
             daysSelected = daysSelected - 1;
         }
-        btn.classList.add("clicked")
+        btn.classList.add("clicked");
         elementsClicked++;
         daysSelected++;
     })
@@ -29,7 +29,16 @@ for (const btn of dayBtns) {
 /********* clear days *********/
 // when the clear-button is clicked, the "clicked" class is removed from all days, any other relevant variables are reset, and the calculated cost is set to 0.
 
+let clearBtn = document.getElementById("clear-button");
 
+clearBtn.addEventListener("click", function clear() {
+    let clickedElements = document.querySelectorAll(".clicked");
+
+    clickedElements.forEach(element => {
+        element.classList.remove("clicked")
+        document.getElementById("full").classList.add("clicked")
+    })
+})
 
 
 
