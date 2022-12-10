@@ -13,8 +13,8 @@ let elementsClicked = 1;
 
 const dayBtns = document.querySelectorAll("li");
 
-for (const btn of dayBtns) {
-    btn.addEventListener("click", function addClicked() {
+dayBtns.forEach(function(btn) {
+    btn.addEventListener("click", function() {
         if (btn.classList.contains("clicked")) {
             elementsClicked = elementsClicked - 1;
             daysSelected = daysSelected - 1;
@@ -24,8 +24,8 @@ for (const btn of dayBtns) {
         elementsClicked++;
         daysSelected++;
         calculate();
-    })
-}
+    });
+});
 
 /********* clear days *********/
 // when the clear-button is clicked, the "clicked" class is removed from all days, any other relevant variables are reset, and the calculated cost is set to 0.
@@ -41,8 +41,8 @@ clearBtn.addEventListener("click", function clear() {
         daysSelected = 0;
         elementsClicked = 1;
         calculate();
-    })
-})
+    });
+});
 
 
 
@@ -58,7 +58,7 @@ halfDayBtn.addEventListener("click", function selectHalf() {
     halfDayBtn.classList.add("clicked");
     fullDayBtn.classList.remove("clicked");
     calculate();
-})
+});
 
 
 
@@ -69,7 +69,7 @@ fullDayBtn.addEventListener("click", function selectHalf() {
     fullDayBtn.classList.add("clicked");
     halfDayBtn.classList.remove("clicked");
     calculate();
-})
+});
 
 
 
