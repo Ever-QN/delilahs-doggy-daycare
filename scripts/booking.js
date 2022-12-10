@@ -18,10 +18,12 @@ for (const btn of dayBtns) {
         if (btn.classList.contains("clicked")) {
             elementsClicked = elementsClicked - 1;
             daysSelected = daysSelected - 1;
+            calculate();
         }
         btn.classList.add("clicked");
         elementsClicked++;
         daysSelected++;
+        calculate();
     })
 }
 
@@ -38,6 +40,7 @@ clearBtn.addEventListener("click", function clear() {
         document.getElementById("full").classList.add("clicked");
         daysSelected = 0;
         elementsClicked = 1;
+        calculate();
     })
 })
 
@@ -54,6 +57,7 @@ halfDayBtn.addEventListener("click", function selectHalf() {
     costPerDay = 20;
     halfDayBtn.classList.add("clicked");
     fullDayBtn.classList.remove("clicked");
+    calculate();
 })
 
 
@@ -64,6 +68,7 @@ fullDayBtn.addEventListener("click", function selectHalf() {
     costPerDay = 35;
     fullDayBtn.classList.add("clicked");
     halfDayBtn.classList.remove("clicked");
+    calculate();
 })
 
 
@@ -73,4 +78,5 @@ fullDayBtn.addEventListener("click", function selectHalf() {
 
 function calculate() {
     let calculatedCost = document.getElementById("calculated-cost");
+    calculatedCost.innerHTML = costPerDay * daysSelected;
 }
