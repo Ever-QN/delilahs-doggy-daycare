@@ -6,7 +6,7 @@
 let costPerDay = 0;
 let daysSelected = 0;
 let elementsClicked = 1;
-let dailyRate = 40;
+let dailyRate = 35;
 
 /********* colour change days of week *********/
 // when the day buttons are clicked, we will apply the "clicked" class to that element, and update any other relevant variables. Then, we can recalculate the total cost.
@@ -62,7 +62,7 @@ halfDayBtn.addEventListener("click", function selectHalf() {
 // when the full-day button is clicked, the daily rate is set back to $35, the clicked class is added to "full" and removed from "half", and the total cost is recalculated.
 
 fullDayBtn.addEventListener("click", function selectHalf() {
-    dailyRate = 20;
+    dailyRate = 35;
     fullDayBtn.classList.add("clicked")
     halfDayBtn.classList.remove("clicked")
 })
