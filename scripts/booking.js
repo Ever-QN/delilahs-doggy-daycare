@@ -11,7 +11,7 @@ let elementsClicked = 1;
 // when the day buttons are clicked, we will apply the "clicked" class to that element, and update any other relevant variables. Then, we can recalculate the total cost.
 // added challenge: don't update the dayCounter if the same day is clicked more than once. hint: .classList.contains() might be helpful here!
 
-let dayBtns = document.querySelectorAll("li");
+const dayBtns = document.querySelectorAll("li");
 
 for (const btn of dayBtns) {
     btn.addEventListener("click", function addClicked() {
@@ -30,7 +30,7 @@ for (const btn of dayBtns) {
 /********* clear days *********/
 // when the clear-button is clicked, the "clicked" class is removed from all days, any other relevant variables are reset, and the calculated cost is set to 0.
 
-let clearBtn = document.getElementById("clear-button");
+const clearBtn = document.getElementById("clear-button");
 
 clearBtn.addEventListener("click", function clear() {
     let clickedElements = document.querySelectorAll(".clicked");
@@ -50,8 +50,8 @@ clearBtn.addEventListener("click", function clear() {
 /********* change rate *********/
 // when the half-day button is clicked, set the daily rate to $20, add the "clicked" class to the "half" element, remove it from the "full" element, and recalculate the total cost.
 
-let halfDayBtn = document.getElementById("half");
-let fullDayBtn = document.getElementById("full");
+const halfDayBtn = document.getElementById("half");
+const fullDayBtn = document.getElementById("full");
 
 halfDayBtn.addEventListener("click", function selectHalf() {
     costPerDay = 20;
