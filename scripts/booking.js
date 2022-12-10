@@ -35,7 +35,7 @@ const clearBtn = document.getElementById("clear-button");
 clearBtn.addEventListener("click", function clear() {
     let clickedElements = document.querySelectorAll(".clicked");
 
-    clickedElements.forEach(element => {
+    clickedElements.forEach(function(element) {
         element.classList.remove("clicked");
         document.getElementById("full").classList.add("clicked");
         daysSelected = 0;
